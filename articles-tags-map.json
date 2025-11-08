@@ -1,0 +1,11 @@
+{
+  "Language Features": ["language features","delegates","events","keywords"],
+  "Concurrency & Threading": ["concurrency","threading","interlocked","thread safety","monitor","lock"],
+  "Memory Management & GC": ["memory","gc","garbage collection","idisposable","finalize","dispose"],
+  "ASP.NET & Web": ["asp.net","asp.net core","web api","mvc","razor"],
+  "Data & EF Core": ["ef core","entity framework","data access","orm"],
+  "Performance": ["performance","optimization","profiling"],
+  "Security": ["security","auth","jwt","authorization"],
+  "Tooling & IDE": ["visual studio","vs code","tooling","debugging"],
+  "WPF & Desktop": ["wpf","winforms","desktop ui"]
+}
