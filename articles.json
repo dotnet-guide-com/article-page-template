@@ -1,0 +1,222 @@
+[
+  {
+    "title": "Implementing Design Patterns in .NET",
+    "url": "/implementing-design-patterns-in-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "Design Patterns", "Architecture", "Best Practices", "C#"],
+    "readingMinutes": 8,
+    "level": "Intermediate",
+    "featured": true
+  },
+  {
+    "title": "What is Multicast Delegate? Explain it with example in C#",
+    "url": "/what-is-multicast-delegate-explain-it-with-example-in-c-sharp.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Delegates", "Events", "Multicast", "Language Features"],
+    "readingMinutes": 6,
+    "level": "Beginner",
+    "featured": false
+  },
+  {
+    "title": "How to Implement Singleton Pattern using C#",
+    "url": "/how-to-implement-singleton-pattern-using-c-c-sharp.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Singleton", "Design Patterns", "Thread Safety", "Lazy Initialization"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": true
+  },
+  {
+    "title": "How to Create a .NET Windows Service Easily",
+    "url": "/how-to-create-a-net-windows-service-easily.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "Windows Service", "Background Processing", "Deployment", "Service Control Manager"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "CLR Basics: Common Language Runtime Overview",
+    "url": "/clr1.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["CLR", ".NET", "JIT", "GC", "Runtime"],
+    "readingMinutes": 5,
+    "level": "Beginner",
+    "featured": false
+  },
+  {
+    "title": "How is Shadowing Different from Overriding in .NET?",
+    "url": "/how-is-shadowing-different-from-overriding-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Inheritance", "Shadowing", "Overriding", "OOP"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "What is the Importance of Finalize Method in .NET?",
+    "url": "/what-is-the-importance-of-finalize-method-in-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "GC", "Finalize", "IDisposable", "Memory Management"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "What is the Purpose of Dispose Method in .NET?",
+    "url": "/what-is-the-purpose-of-dispose-method-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "IDisposable", "Dispose Pattern", "Resource Management", "Memory"],
+    "readingMinutes": 7,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "What is the Need for Unsafe Code in C#?",
+    "url": "/what-is-the-need-for-unsafe-code-in-c-sharp.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Unsafe Code", "Pointers", "Performance", "Interop"],
+    "readingMinutes": 6,
+    "level": "Advanced",
+    "featured": false
+  },
+  {
+    "title": "How Do You Pass Data Between Different Tiers in .NET Architecture?",
+    "url": "/how-do-you-pass-data-between-different-tiers-in-dot-net-architecture.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "Architecture", "DTO", "Layered Design", "Serialization"],
+    "readingMinutes": 7,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "How is new Keyword Different from override Keyword during Inheritance in .NET?",
+    "url": "/how-is-new-keyword-different-from-override-keyword-during-inheritance-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Inheritance", "new vs override", "Virtual Methods", "OOP"],
+    "readingMinutes": 5,
+    "level": "Beginner",
+    "featured": false
+  },
+  {
+    "title": "What is the Difference between virtual and abstract Keywords in .NET?",
+    "url": "/what-is-the-difference-between-virtual-and-abstract-keywords-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Abstract", "Virtual", "Polymorphism", "OOP"],
+    "readingMinutes": 6,
+    "level": "Beginner",
+    "featured": false
+  },
+  {
+    "title": "What is the Difference between Abstract Class and Interface in .NET?",
+    "url": "/what-is-the-difference-between-abstract-class-and-interface-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Abstract Class", "Interface", "Design", "OOP"],
+    "readingMinutes": 7,
+    "level": "Beginner",
+    "featured": false
+  },
+  {
+    "title": "How to Use Structured Exception Handling in .NET",
+    "url": "/how-to-use-structured-exception-handling-in-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "Exceptions", "try-catch", "finally", "Best Practices"],
+    "readingMinutes": 7,
+    "level": "Beginner",
+    "featured": true
+  },
+  {
+    "title": "How is Versioning Achieved in C#?",
+    "url": "/how-is-versioning-achieved-in-c-sharp.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Versioning", "AssemblyInfo", "Semantic Versioning", "Strong Naming"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "How is String Class Different from StringBuilder Class in .NET?",
+    "url": "/how-is-string-class-different-from-string-builder-class-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "C#", "String", "StringBuilder", "Performance"],
+    "readingMinutes": 6,
+    "level": "Beginner",
+    "featured": false
+  },
+  {
+    "title": "How Do You Implement Observer Design Pattern in .NET?",
+    "url": "/how-do-you-implement-observer-design-pattern-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Observer Pattern", "Events", "IObservable", "Reactive"],
+    "readingMinutes": 8,
+    "level": "Intermediate",
+    "featured": false
+  },
+    {
+    "title": "Mastering Pointer Operations and Memory Safety with Unsafe C Code",
+    "url": "/writing-unsafe-code-in-c-sharp.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Unsafe Code", "Pointers", "Memory Management", "Performance"],
+    "readingMinutes": 7,
+    "level": "Intermediate",
+    "featured": true
+  },
+  {
+    "title": "Preventing Method Overrides with Sealed Methods in C#",
+    "url": "/what-is-the-purpose-of-sealed-method-in-c-sharp.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "Sealed Methods", "Inheritance", "Design Patterns", "Performance"],
+    "readingMinutes": 7,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "Achieving Thread Safety with Interlocked Operations in .NET",
+    "url": "/what-is-the-purpose-of-interlocked-class-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "Thread Safety", "Interlocked", "Concurrency", "Atomic Operations"],
+    "readingMinutes": 5,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "Choosing Between const and readonly Keywords in C#",
+    "url": "/what-is-the-difference-between-const-and-readonly-in-dot-net.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": ["C#", "const", "readonly", "Immutability", "Language Features"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": false
+  },
+  {
+    "title": "Applying SOLID and OOP Principles in Modern .NET Development",
+    "url": "/what-object-oriented-principles-can-be-incorporated-in-dot-net-application.html",
+    "published": "2025-11-04",
+    "updated": "2025-11-04",
+    "tags": [".NET", "OOP", "SOLID", "Design Principles", "Best Practices"],
+    "readingMinutes": 6,
+    "level": "Intermediate",
+    "featured": true
+  }
+]
