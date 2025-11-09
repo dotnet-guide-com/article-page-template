@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS                                    -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Articles: Modern .NET Guidance You Can Trust | dotnet-guide.com</title>
+    <meta name="title" content="Articles: Modern .NET Guidance You Can Trust | dotnet-guide.com">
+    <meta name="description" content="Browse our curated library of practical .NET articles—clear explanations, focused code samples, and up-to-date guidance for C#, architecture, performance, memory, concurrency, and more.">
+    <meta name="keywords" content=".NET articles, C# programming, ASP.NET Core, design patterns, performance optimization, memory management, concurrency, threading">
+    <meta name="author" content="dotnet-guide.com">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.dotnet-guide.com/articles/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dotnet-guide.com/articles/">
+    <meta property="og:title" content="Articles: Modern .NET Guidance | dotnet-guide.com">
+    <meta property="og:description" content="Browse our curated library of practical .NET articles with clear explanations and focused code samples.">
+    <meta property="og:image" content="https://www.dotnet-guide.com/assets/images/og-image-articles.png">
+    <meta property="og:site_name" content="dotnet-guide.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.dotnet-guide.com/articles/">
+    <meta name="twitter:title" content="Articles: Modern .NET Guidance | dotnet-guide.com">
+    <meta name="twitter:description" content="Browse our curated library of practical .NET articles covering C#, architecture, performance, and more.">
+    <meta name="twitter:image" content="https://www.dotnet-guide.com/assets/images/twitter-card-articles.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png">
+    <link rel="apple-touch-icon" href="/assets/images/favicon-64.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts - Inter with font-display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- ============================================ -->
+    <!-- STRUCTURED DATA (Schema.org) - Base          -->
+    <!-- ============================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Technical Articles",
+      "description": "Curated library of practical .NET articles covering C#, architecture, performance, memory management, concurrency, and modern development practices",
+      "url": "https://www.dotnet-guide.com/articles/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "dotnet-guide.com",
+        "url": "https://www.dotnet-guide.com/"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.dotnet-guide.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Articles",
+            "item": "https://www.dotnet-guide.com/articles/"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Dynamic Schema.org ItemList will be injected here by JavaScript -->
+    <script id="schema-itemlist-placeholder"></script>
+
+    <!-- ============================================ -->
+    <!-- ARTICLES PAGE STYLES                         -->
+    <!-- ============================================ -->
+    <style>
+/* ========================================================================== */
+/* ARTICLES PAGE STYLES - Teal Accent Theme                                   */
+/* ========================================================================== */
+
+/* CSS Variables - Articles Teal Theme */
+:root {
+    /* Teal accent colors for articles page */
+    --accent-articles: #06B6D4;
+    --accent-articles-dark: #0891B2;
+    --accent-articles-darker: #0B4A53;
+    --accent-articles-light: #22D3EE;
+    --accent-articles-pale: #E0F2FE;
+
+    /* Reuse core variables from main.css */
+    --bg-page: #FAFBFC;
+    --bg-surface: #FFFFFF;
+    --border-light: #E2E8F0;
+    --border-medium: #CBD5E1;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+    --text-tertiary: #94A3B8;
+
+    /* Spacing */
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+
+    /* Border radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    padding: var(--space-4) 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    z-index: 10;
+}
+
+.breadcrumb-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.breadcrumb-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.breadcrumb-list a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-list a:hover {
+    color: var(--accent-articles);
+}
+
+.breadcrumb-separator {
+    color: var(--text-tertiary);
+    user-select: none;
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--accent-articles-pale) 0%, #FFFFFF 100%);
+    padding: var(--space-12) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-4);
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--space-8);
+}
+
+/* Search Bar */
+.search-bar-wrapper {
+    position: relative;
+    max-width: 600px;
+}
+
+.search-icon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-tertiary);
+    pointer-events: none;
+}
+
+#globalSearch {
+    width: 100%;
+    padding: var(--space-4) var(--space-4) var(--space-4) 3.5rem;
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    transition: all 0.2s ease;
+}
+
+#globalSearch:focus {
+    outline: none;
+    border-color: var(--accent-articles);
+    box-shadow: 0 0 0 3px var(--accent-articles-pale);
+}
+
+#globalSearch::placeholder {
+    color: var(--text-tertiary);
+}
+
+/* Featured Section */
+.featured-section {
+    padding: var(--space-12) 0;
+    background: var(--bg-page);
+}
+
+.section-header {
+    margin-bottom: var(--space-8);
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-3);
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Featured Cards Grid */
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+.article-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.article-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-articles) 0%, var(--accent-articles-light) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-articles-light);
+}
+
+.article-card:hover::before {
+    opacity: 1;
+}
+
+.card-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.375rem 0.75rem;
+    background: var(--accent-articles-pale);
+    color: var(--accent-articles-darker);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-4);
+    width: fit-content;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-3);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-title a:hover {
+    color: var(--accent-articles);
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-light);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.level-badge {
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.level-beginner {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+.level-intermediate {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.level-advanced {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+/* Directory Section */
+.directory-section {
+    padding: var(--space-12) 0;
+    background: var(--bg-surface);
+}
+
+/* Filters Bar */
+.filters-bar {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.filter-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+#tagFilter,
+#sortBy {
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    background: var(--bg-surface) url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+    background-size: 12px;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 160px;
+}
+
+#tagFilter:focus,
+#sortBy:focus {
+    outline: none;
+    border-color: var(--accent-articles);
+    box-shadow: 0 0 0 3px var(--accent-articles-pale);
+}
+
+#tagFilter:hover,
+#sortBy:hover {
+    border-color: var(--accent-articles-dark);
+}
+
+/* Articles Table */
+.articles-table-wrapper {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.articles-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.articles-table thead {
+    background: var(--bg-page);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.articles-table th {
+    padding: var(--space-4);
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.articles-table tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.2s ease;
+}
+
+.articles-table tbody tr:hover {
+    background: var(--accent-articles-pale);
+}
+
+.articles-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.articles-table td {
+    padding: var(--space-4);
+    vertical-align: middle;
+}
+
+.table-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.table-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.table-title a:hover {
+    color: var(--accent-articles);
+}
+
+.table-date,
+.table-reading-time {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border-light);
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-medium);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: var(--accent-articles-pale);
+    border-color: var(--accent-articles);
+    color: var(--accent-articles-darker);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    padding: 0 var(--space-4);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    color: var(--text-secondary);
+}
+
+.empty-state svg {
+    width: 64px;
+    height: 64px;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-4);
+}
+
+.empty-state h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-2);
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: var(--space-12);
+    color: var(--text-secondary);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--accent-articles);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto var(--space-4);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* NOSCRIPT Fallback Styles */
+.noscript-article-list {
+    padding: var(--space-8) 0;
+}
+
+.noscript-article-list h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+}
+
+.noscript-article-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noscript-article-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.noscript-article-list li:last-child {
+    border-bottom: none;
+}
+
+.noscript-article-list a {
+    color: var(--accent-articles-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.noscript-article-list a:hover {
+    color: var(--accent-articles);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: var(--space-8) 0;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    #tagFilter,
+    #sortBy {
+        width: 100%;
+    }
+
+    .articles-table {
+        font-size: 0.875rem;
+    }
+
+    .articles-table th,
+    .articles-table td {
+        padding: var(--space-3);
+    }
+
+    .articles-table th:nth-child(3),
+    .articles-table td:nth-child(3) {
+        display: none; /* Hide reading time on mobile */
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+    }
+
+    .articles-table th:nth-child(2),
+    .articles-table td:nth-child(2) {
+        display: none; /* Hide updated date on small mobile */
+    }
+}
+
+/* Print Styles */
+@media print {
+    .breadcrumb-nav,
+    .search-bar-wrapper,
+    .filters-bar,
+    .pagination,
+    .featured-section {
+        display: none;
+    }
+
+    .articles-table-wrapper {
+        border: 1px solid #000;
+    }
+
+    .articles-table tbody tr:hover {
+        background: transparent;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- ============================================ -->
+    <!-- HEADER PLACEHOLDER (Injected by header.js)   -->
+    <!-- ============================================ -->
+    <div id="header-placeholder"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT                                 -->
+    <!-- ============================================ -->
+    <main id="main-content">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li><a href="/">Home</a></li>
+                    <li><span class="breadcrumb-separator" aria-hidden="true">›</span></li>
+                    <li><span aria-current="page">Articles</span></li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Articles: Modern .NET Guidance You Can Trust</h1>
+                    <p class="hero-description">
+                        Browse our curated library of practical .NET articles—clear explanations, focused code samples,
+                        and up-to-date guidance for C#, architecture, performance, memory, concurrency, and more.
+                        Filter by topic, search by title, and jump straight to what you need.
+                    </p>
+
+                    <!-- Global Search -->
+                    <div class="search-bar-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <input
+                            type="text"
+                            id="globalSearch"
+                            placeholder="Search articles by title or topic..."
+                            aria-label="Search articles"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Articles Section -->
+        <section class="featured-section" id="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Articles</h2>
+                    <p class="section-subtitle">Hand-picked articles covering essential .NET development topics</p>
+                </div>
+
+                <div class="featured-grid" id="featuredGrid">
+                    <!-- Featured cards will be injected here by JavaScript -->
+                    <div class="loading-state">
+                        <div class="loading-spinner"></div>
+                        <p>Loading featured articles...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Articles Directory Section -->
+        <section class="directory-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Complete Articles Directory</h2>
+                    <p class="section-subtitle">Browse all articles or use filters to find exactly what you need</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label for="tagFilter">Filter by topic:</label>
+                        <select id="tagFilter" aria-label="Filter articles by topic">
+                            <option value="">All Topics</option>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy" aria-label="Sort articles">
+                            <option value="updated-desc">Recently Updated</option>
+                            <option value="title-asc">Title (A-Z)</option>
+                            <option value="title-desc">Title (Z-A)</option>
+                            <option value="published-desc">Recently Published</option>
+                            <option value="published-asc">Oldest First</option>
+                            <option value="reading-asc">Quick Reads First</option>
+                            <option value="reading-desc">Long Reads First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Articles Table -->
+                <div class="articles-table-wrapper">
+                    <table class="articles-table" id="articlesTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Updated</th>
+                                <th>Read Time</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody id="articlesTableBody">
+                            <!-- Table rows will be injected here by JavaScript -->
+                            <tr>
+                                <td colspan="4">
+                                    <div class="loading-state">
+                                        <div class="loading-spinner"></div>
+                                        <p>Loading articles...</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination" style="display: none;">
+                    <button class="pagination-btn" id="prevPage" aria-label="Previous page" disabled>Previous</button>
+                    <span class="pagination-info" id="paginationInfo">Page 1 of 1</span>
+                    <button class="pagination-btn" id="nextPage" aria-label="Next page" disabled>Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- NOSCRIPT FALLBACK - SEO-Friendly Links       -->
+        <!-- ============================================ -->
+        <noscript>
+            <section class="directory-section">
+                <div class="container">
+                    <div class="noscript-article-list">
+                        <h2>All .NET Articles</h2>
+                        <p style="margin-bottom: 2rem; color: #64748B;">JavaScript is disabled. Here's a complete list of all our articles:</p>
+                        <ul id="noscript-article-links">
+                            <!-- Will be populated by JavaScript during page load, before noscript evaluation -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </noscript>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER PLACEHOLDER (Injected by footer.js)   -->
+    <!-- ============================================ -->
+    <div id="footer-placeholder"></div>
+
+    <!-- ============================================ -->
+    <!-- SCRIPTS                                      -->
+    <!-- ============================================ -->
+    <!-- Core Scripts -->
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <!-- Articles Page Script - SEO Enhanced -->
+    <script>
+    // ========================================================================
+    // ARTICLES PAGE - SEO Enhanced with Dynamic Schema.org & NOSCRIPT
+    // ========================================================================
+
+    (async function() {
+        'use strict';
+
+        // Configuration
+        const ITEMS_PER_PAGE = 20;
+        const MIN_FEATURED_CARDS = 4;
+        const BASE_URL = 'https://www.dotnet-guide.com';
+
+        // Data paths - Try multiple locations for flexibility
+        const DATA_PATHS = {
+            articles: [
+                '/assets/data/articles.json',
+                './articles.json',
+                'articles.json'
+            ],
+            tagsMap: [
+                '/assets/data/articles-tags-map.json',
+                './articles-tags-map.json',
+                'articles-tags-map.json'
+            ]
+        };
+
+        // State
+        let allArticles = [];
+        let filteredArticles = [];
+        let currentPage = 1;
+        let canonicalTags = [];
+
+        // ====================================================================
+        // SEO ENHANCEMENT FUNCTIONS
+        // ====================================================================
+
+        /**
+         * Dynamically inject Schema.org ItemList JSON-LD into page <head>
+         * This makes ALL article URLs crawlable by search engines and LLMs
+         */
+        function injectSchemaOrgItemList(articles) {
+            try {
+                const itemList = {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": ".NET Technical Articles Directory",
+                    "description": "Comprehensive collection of .NET development articles",
+                    "numberOfItems": articles.length,
+                    "itemListElement": articles.map((article, index) => ({
+                        "@type": "ListItem",
+                        "position": index + 1,
+                        "item": {
+                            "@type": "Article",
+                            "url": `${BASE_URL}${article.url}`,
+                            "name": article.title,
+                            "headline": article.title,
+                            "datePublished": article.published,
+                            "dateModified": article.updated,
+                            "author": {
+                                "@type": "Organization",
+                                "name": "dotnet-guide.com"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "dotnet-guide.com",
+                                "url": BASE_URL
+                            },
+                            "keywords": Array.isArray(article.tags) ? article.tags.join(', ') : '',
+                            "articleSection": Array.isArray(article.tags) && article.tags.length > 0 ? article.tags[0] : 'Programming'
+                        }
+                    }))
+                };
+
+                // Create script element and inject into head
+                const scriptElement = document.createElement('script');
+                scriptElement.type = 'application/ld+json';
+                scriptElement.textContent = JSON.stringify(itemList, null, 2);
+
+                // Replace placeholder or append to head
+                const placeholder = document.getElementById('schema-itemlist-placeholder');
+                if (placeholder) {
+                    placeholder.replaceWith(scriptElement);
+                } else {
+                    document.head.appendChild(scriptElement);
+                }
+
+                console.log(`✅ SEO: Injected Schema.org ItemList with ${articles.length} articles`);
+            } catch (error) {
+                console.error('❌ SEO: Failed to inject Schema.org ItemList:', error);
+            }
+        }
+
+        /**
+         * Populate NOSCRIPT section with all article links
+         * Ensures articles are discoverable even without JavaScript
+         */
+        function populateNoscriptLinks(articles) {
+            try {
+                const noscriptList = document.getElementById('noscript-article-links');
+                if (!noscriptList) return;
+
+                const linksHTML = articles
+                    .sort((a, b) => a.title.localeCompare(b.title))
+                    .map(article => `
+                        <li>
+                            <a href="${escapeHtml(article.url)}" rel="bookmark">
+                                ${escapeHtml(article.title)}
+                            </a>
+                            ${article.tags && article.tags.length > 0 ? ` <small style="color: #94A3B8;">(${escapeHtml(article.tags.slice(0, 3).join(', '))})</small>` : ''}
+                        </li>
+                    `).join('');
+
+                noscriptList.innerHTML = linksHTML;
+                console.log(`✅ SEO: Populated noscript section with ${articles.length} article links`);
+            } catch (error) {
+                console.error('❌ SEO: Failed to populate noscript links:', error);
+            }
+        }
+
+        // ====================================================================
+        // UTILITY FUNCTIONS
+        // ====================================================================
+
+        function formatDate(dateString) {
+            try {
+                const date = new Date(dateString);
+                if (isNaN(date.getTime())) {
+                    return dateString;
+                }
+                const options = { year: 'numeric', month: 'short', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            } catch (e) {
+                console.error('Error formatting date:', e);
+                return dateString;
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function showError(message) {
+            const tableBody = document.getElementById('articlesTableBody');
+            const featuredGrid = document.getElementById('featuredGrid');
+
+            const errorHtml = `
+                <div class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Error Loading Content</h3>
+                    <p>${escapeHtml(message)}</p>
+                </div>
+            `;
+
+            if (tableBody) {
+                tableBody.innerHTML = `<tr><td colspan="4">${errorHtml}</td></tr>`;
+            }
+            if (featuredGrid) {
+                featuredGrid.innerHTML = errorHtml;
+            }
+        }
+
+        // ====================================================================
+        // DATA LOADING WITH FALLBACK
+        // ====================================================================
+
+        async function fetchWithFallback(paths) {
+            for (const path of paths) {
+                try {
+                    const response = await fetch(path);
+                    if (response.ok) {
+                        return await response.json();
+                    }
+                } catch (e) {
+                    console.warn(`Failed to fetch from ${path}:`, e);
+                }
+            }
+            throw new Error(`Failed to load data from any of: ${paths.join(', ')}`);
+        }
+
+        async function loadAndNormalize() {
+            try {
+                // Fetch both data files with fallback
+                const [articlesData, tagsMapData] = await Promise.all([
+                    fetchWithFallback(DATA_PATHS.articles),
+                    fetchWithFallback(DATA_PATHS.tagsMap)
+                ]);
+
+                // Validate data
+                if (!Array.isArray(articlesData)) {
+                    throw new Error('Articles data is not an array');
+                }
+
+                if (typeof tagsMapData !== 'object') {
+                    throw new Error('Tags map data is not an object');
+                }
+
+                // Build reverse index: alias (lowercase) → Canonical
+                const aliasToCanon = {};
+                for (const [canon, aliases] of Object.entries(tagsMapData)) {
+                    aliasToCanon[canon.toLowerCase()] = canon;
+                    if (Array.isArray(aliases)) {
+                        aliases.forEach(alias => {
+                            if (alias && typeof alias === 'string') {
+                                aliasToCanon[alias.toLowerCase()] = canon;
+                            }
+                        });
+                    }
+                }
+
+                // Normalize article tags
+                allArticles = articlesData.map(article => {
+                    // Ensure article has required fields
+                    const rawTags = Array.isArray(article.tags) ? article.tags : (article.tags ? [article.tags] : []);
+                    const normalizedTags = Array.from(new Set(
+                        rawTags
+                            .filter(tag => tag && typeof tag === 'string')
+                            .map(tag => aliasToCanon[tag.toLowerCase()] || tag)
+                    ));
+
+                    return {
+                        ...article,
+                        tags: normalizedTags,
+                        title: article.title || 'Untitled',
+                        url: article.url || '#',
+                        updated: article.updated || article.published || '',
+                        published: article.published || article.updated || '',
+                        readingMinutes: article.readingMinutes || 5,
+                        level: article.level || 'Intermediate',
+                        featured: article.featured === true
+                    };
+                });
+
+                // Extract unique canonical tags and sort
+                canonicalTags = Array.from(new Set(
+                    allArticles.flatMap(a => a.tags)
+                )).sort();
+
+                filteredArticles = [...allArticles];
+
+                // ✅ SEO ENHANCEMENTS - Inject Schema.org and populate noscript
+                injectSchemaOrgItemList(allArticles);
+                populateNoscriptLinks(allArticles);
+
+                return true;
+            } catch (error) {
+                console.error('Error loading data:', error);
+                showError('Failed to load articles. Please ensure the data files are available and try again.');
+                return false;
+            }
+        }
+
+        // ====================================================================
+        // FEATURED CARDS RENDERING
+        // ====================================================================
+
+        function renderFeaturedCards() {
+            const featuredSection = document.getElementById('featured-section');
+            const featuredGrid = document.getElementById('featuredGrid');
+
+            if (!featuredSection || !featuredGrid) {
+                console.error('Featured section elements not found');
+                return;
+            }
+
+            // Get featured articles
+            let featured = allArticles.filter(a => a.featured === true);
+
+            // If fewer than MIN_FEATURED_CARDS, supplement with newest articles
+            if (featured.length < MIN_FEATURED_CARDS) {
+                const additionalNeeded = MIN_FEATURED_CARDS - featured.length;
+                const nonFeatured = allArticles
+                    .filter(a => a.featured !== true)
+                    .sort((a, b) => new Date(b.updated) - new Date(a.updated))
+                    .slice(0, additionalNeeded);
+                featured = [...featured, ...nonFeatured];
+            }
+
+            // If still less than MIN_FEATURED_CARDS, hide section
+            if (featured.length < MIN_FEATURED_CARDS) {
+                featuredSection.style.display = 'none';
+                return;
+            }
+
+            // Limit to 6 cards maximum
+            featured = featured.slice(0, 6);
+
+            // Render cards
+            featuredGrid.innerHTML = featured.map(article => `
+                <article class="article-card">
+                    <span class="card-type-badge">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 1L7.5 4.5L11 5L8.5 7.5L9 11L6 9L3 11L3.5 7.5L1 5L4.5 4.5L6 1Z" fill="currentColor"/>
+                        </svg>
+                        Article
+                    </span>
+                    <h3 class="card-title">
+                        <a href="${escapeHtml(article.url)}">${escapeHtml(article.title)}</a>
+                    </h3>
+                    <div class="card-meta">
+                        <span class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M8 4V8L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            ${article.readingMinutes} min read
+                        </span>
+                        <span class="level-badge level-${escapeHtml(article.level.toLowerCase())}">${escapeHtml(article.level)}</span>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // ====================================================================
+        // TABLE RENDERING
+        // ====================================================================
+
+        function renderTable() {
+            const tableBody = document.getElementById('articlesTableBody');
+
+            if (!tableBody) {
+                console.error('Table body element not found');
+                return;
+            }
+
+            const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+            const endIdx = startIdx + ITEMS_PER_PAGE;
+            const pageArticles = filteredArticles.slice(startIdx, endIdx);
+
+            if (pageArticles.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="4">
+                            <div class="empty-state">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h3>No articles found</h3>
+                                <p>Try adjusting your search or filter criteria</p>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tableBody.innerHTML = pageArticles.map(article => `
+                <tr>
+                    <td>
+                        <div class="table-title">
+                            <a href="${escapeHtml(article.url)}">${escapeHtml(article.title)}</a>
+                        </div>
+                    </td>
+                    <td class="table-date">${formatDate(article.updated)}</td>
+                    <td class="table-reading-time">${article.readingMinutes} min</td>
+                    <td>
+                        <span class="level-badge level-${escapeHtml(article.level.toLowerCase())}">
+                            ${escapeHtml(article.level)}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // ====================================================================
+        // FILTERS & SORTING
+        // ====================================================================
+
+        function populateTagFilter() {
+            const tagFilter = document.getElementById('tagFilter');
+
+            if (!tagFilter) {
+                console.error('Tag filter element not found');
+                return;
+            }
+
+            const options = canonicalTags.map(tag =>
+                `<option value="${escapeHtml(tag)}">${escapeHtml(tag)}</option>`
+            ).join('');
+            tagFilter.innerHTML = '<option value="">All Topics</option>' + options;
+        }
+
+        function applyFilters() {
+            const searchInput = document.getElementById('globalSearch');
+            const tagFilter = document.getElementById('tagFilter');
+            const sortBy = document.getElementById('sortBy');
+
+            if (!searchInput || !tagFilter || !sortBy) {
+                console.error('Filter elements not found');
+                return;
+            }
+
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedTag = tagFilter.value;
+            const sortByValue = sortBy.value;
+
+            // Filter
+            filteredArticles = allArticles.filter(article => {
+                const matchesSearch = !searchTerm ||
+                    article.title.toLowerCase().includes(searchTerm) ||
+                    article.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+
+                const matchesTag = !selectedTag || article.tags.includes(selectedTag);
+
+                return matchesSearch && matchesTag;
+            });
+
+            // Sort
+            filteredArticles.sort((a, b) => {
+                switch(sortByValue) {
+                    case 'updated-desc':
+                        return new Date(b.updated) - new Date(a.updated);
+                    case 'title-asc':
+                        return a.title.localeCompare(b.title);
+                    case 'title-desc':
+                        return b.title.localeCompare(a.title);
+                    case 'published-desc':
+                        return new Date(b.published) - new Date(a.published);
+                    case 'published-asc':
+                        return new Date(a.published) - new Date(b.published);
+                    case 'reading-asc':
+                        return a.readingMinutes - b.readingMinutes;
+                    case 'reading-desc':
+                        return b.readingMinutes - a.readingMinutes;
+                    default:
+                        return 0;
+                }
+            });
+
+            currentPage = 1;
+            renderTable();
+            renderPagination();
+        }
+
+        // ====================================================================
+        // PAGINATION
+        // ====================================================================
+
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            const paginationInfo = document.getElementById('paginationInfo');
+            const prevBtn = document.getElementById('prevPage');
+            const nextBtn = document.getElementById('nextPage');
+
+            if (!pagination || !paginationInfo || !prevBtn || !nextBtn) {
+                console.error('Pagination elements not found');
+                return;
+            }
+
+            // Handle edge case of no articles
+            if (filteredArticles.length === 0) {
+                pagination.style.display = 'none';
+                return;
+            }
+
+            const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE));
+
+            paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage >= totalPages;
+
+            // Show/hide pagination if only one page
+            pagination.style.display = totalPages <= 1 ? 'none' : 'flex';
+        }
+
+        function changePage(direction) {
+            const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE));
+
+            if (direction === 'prev' && currentPage > 1) {
+                currentPage--;
+            } else if (direction === 'next' && currentPage < totalPages) {
+                currentPage++;
+            } else {
+                return; // No change needed
+            }
+
+            renderTable();
+            renderPagination();
+
+            // Scroll to top of table
+            const articlesTable = document.getElementById('articlesTable');
+            if (articlesTable) {
+                articlesTable.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // ====================================================================
+        // EVENT LISTENERS
+        // ====================================================================
+
+        function setupEventListeners() {
+            // Search input with debouncing
+            const searchInput = document.getElementById('globalSearch');
+            if (searchInput) {
+                let searchTimeout;
+                searchInput.addEventListener('input', () => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(applyFilters, 300);
+                });
+            }
+
+            // Filters
+            const tagFilter = document.getElementById('tagFilter');
+            if (tagFilter) {
+                tagFilter.addEventListener('change', applyFilters);
+            }
+
+            const sortBy = document.getElementById('sortBy');
+            if (sortBy) {
+                sortBy.addEventListener('change', applyFilters);
+            }
+
+            // Pagination
+            const prevPage = document.getElementById('prevPage');
+            if (prevPage) {
+                prevPage.addEventListener('click', () => changePage('prev'));
+            }
+
+            const nextPage = document.getElementById('nextPage');
+            if (nextPage) {
+                nextPage.addEventListener('click', () => changePage('next'));
+            }
+        }
+
+        // ====================================================================
+        // INITIALIZATION
+        // ====================================================================
+
+        async function init() {
+            try {
+                const success = await loadAndNormalize();
+
+                if (success && allArticles.length > 0) {
+                    populateTagFilter();
+                    renderFeaturedCards();
+                    applyFilters(); // This will render table and pagination
+                    setupEventListeners();
+
+                    console.log(`✅ Articles page initialized successfully with ${allArticles.length} articles`);
+                    console.log(`✅ SEO: All URLs are crawlable via Schema.org ItemList + noscript fallback`);
+                } else if (success && allArticles.length === 0) {
+                    showError('No articles available at this time.');
+                }
+            } catch (error) {
+                console.error('Initialization error:', error);
+                showError('An unexpected error occurred. Please refresh the page.');
+            }
+        }
+
+        // Start the application when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+
+    <!-- Analytics (Uncomment for production) -->
+    <!-- <script src="/assets/js/analytics.js" defer></script> -->
+</body>
+</html>
